@@ -9,4 +9,11 @@
 class Paypayment
 {
 
+
+    function __construct()
+    {
+
+    }
+
+
 }
