@@ -40,7 +40,7 @@ class Order extends John
 
         $obj->pagetitle=$today."_".$_SESSION['cart']['u_lastname']."_".$_SESSION['cart']['u_name']."_".$_SESSION['cart']['u_surname'];
 
-
+        $obj->published='false';
         $obj->parent=$this->parent;
         $obj->template=$this->template;
         $obj->TV['reg_sity']=$_SESSION['cart']['reg_sity'];

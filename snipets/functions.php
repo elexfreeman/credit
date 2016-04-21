@@ -363,6 +363,8 @@ function IncertPage($page)
         $product_id = $row_page['id'];
     }
 
+    if(!isset($page->published)) $page->published='true';
+
 
     if ($product_id == 0) {
         $sql_product = "INSERT INTO " . $table_prefix . "site_content
@@ -379,7 +381,7 @@ content_dispo, hidemenu, class_key, context_key,
 content_type, uri, uri_override, hide_children_in_tree,
 show_in_tree, properties)
 VALUES (NULL, 'document', 'text/html', '" .  EscapeString($page->pagetitle) . "', '', '', '" . $page->alias . "',
-'', true, 0, 0, " . $page->parent . ", false, '', '', true, " . $page->template . ", 1, true, true, 1, 1421901846, 0, 0, false, 0, 0, 1421901846, 1, '',
+'', ".$page->published.", 0, 0, " . $page->parent . ", false, '', '', true, " . $page->template . ", 1, true, true, 1, 1421901846, 0, 0, false, 0, 0, 1421901846, 1, '',
 false, false, false, false, false, 'modDocument', 'web', 1,
  '" . $page->url . "', false, false, true, null
  );
