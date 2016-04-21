@@ -8,9 +8,29 @@
  */
 class Order extends John
 {
+    public $template = 10;
+    public $doc_root = 35;
+
     function __construct()
     {
 
+    }
+
+    /*Сохраняет данные заявки*/
+    public function Commit()
+    {
+
+    }
+    /*Для аяксов*/
+    function Ajax()
+    {
+        if (isset($_GET['action'])) {
+            if($_GET['action']=='Commit')
+            {
+                $this->Commit();
+            }
+
+        }
     }
 
 

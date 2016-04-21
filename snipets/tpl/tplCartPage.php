@@ -4,9 +4,6 @@
 
     <?php     if(($_SESSION['cart']['ins_count']+0)>0)  {?>
 
-
-
-
     <div class="divredline"></div>
     <div class="chkleft">
         <div class="chkstrahlist">
@@ -36,7 +33,7 @@
                 </span></div>
             <div class="strahovatelinfoitem">Дата Рождения: <span class="strhinfoitemspan"><?php echo $_SESSION['cart']['u_birthday'];?></span>
             </div>
-            <div class="strahovatelinfoitem">Паспорт: <span class="strhinfoitemspan"></span></div>
+            <!--<div class="strahovatelinfoitem">Паспорт: <span class="strhinfoitemspan"></span></div> -->
             <div class="strahovatelinfoitem">Адрес: <span class="strhinfoitemspan">
                     <?php echo $_SESSION['cart']['reg_sity'].' '.$_SESSION['cart']['reg_street'].' '.$_SESSION['cart']['reg_house'].' '.$_SESSION['cart']['reg_kv']; ?>
                 </span></div>
@@ -59,7 +56,7 @@
                 echo $this->tplCard( $_SESSION['cart']);
             ?>
         </div>
-        <input onclick="Order.OrderPay();" type="button" id="payButton" data-loading-text="Подождите..."  class="chkpaybutton" value="Оплатить" />
+        <input onclick="Order.OrderPay();" type="button" id="payButton" data-loading-text="Подождите..."  class="chkpaybutton" value="Оформить" />
     </div>
     <?php } else {?>
     Корзина пустая
