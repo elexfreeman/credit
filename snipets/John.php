@@ -55,7 +55,7 @@ class John
         }
     }
 
-    function tplCard($cart)
+    function tplCard($card)
     {
         include 'tpl/tplCard.php';
         return $res;
@@ -69,7 +69,7 @@ class John
         $price=$Product->TV['price_'.$pocket];
         $summa=0;
         for ($i = 1; $i <= ($card['ins_count'] + 0); $i++) {
-            if (isset($cart['ins_FIO_' . $i])) {
+            if (isset($card['ins_FIO_' . $i])) {
                 $summa+=$price;
             }
         }
