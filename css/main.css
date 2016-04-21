@@ -1,0 +1,1363 @@
+
+/* ==========================================================================
+   Start of custom Webflow CSS
+   ========================================================================== */
+.topmenu {
+  width: 1000px;
+  height: 110px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.logoimg1 {
+  margin-top: 33px;
+  margin-left: 32px;
+  float: left;
+}
+
+.logo2box {
+  width: 327px;
+  height: 100%;
+  float: left;
+  padding-Top: 28PX;
+}
+
+.logo2text1 {
+  padding-top: 21px;
+  font-family: Bitter, serif;
+  color: #161aa7;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.logo2text2 {
+  margin-top: -3px;
+  font-family: Bitter, serif;
+  color: #161aa7;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.logo2 {
+  margin-top: 9px;
+  margin-left: 0px;
+/*  float: right;*/
+}
+
+.topphonediv {
+  width: 300px;
+  height: 100%;
+  padding-top: 48px;
+  padding-left: 52px;
+  float: left;
+  font-size: 25px;
+}
+
+.topicinphone {
+  margin-top: -6px;
+  float: left;
+}
+
+.topphonetext {
+  float: left;
+  color: #585858;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.phonespan {
+  color: #17417d;
+  font-weight: 700;
+}
+
+.topcall {
+  width: 235px;
+  height: 57px;
+  margin-top: 28px;
+  margin-left: 32px;
+  padding-top: 17px;
+  float: left;
+  border: 2px solid #17417d;
+  border-radius: 25px;
+  color: #17417d;
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 0px;
+  cursor: pointer;
+}
+
+.topcall.mainform {
+  border-color: #cecece;
+  background-color: #17417d;
+  color: #fff;
+}
+
+.centerbox {
+  padding-bottom: 149px;
+  background-image: url("https://daks2k3a4ib2z.cloudfront.net/569e9de8a31a279b540c6dae/569eb1466903ec6e4a44cba3_center-bg.jpg");
+  background-position: 0px 0px;
+  background-size: cover;
+}
+
+.centerboxtext {
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 87px;
+  letter-spacing: 3px;
+}
+
+.centerh1 {
+  color: #4e4c4c;
+  text-align: center;
+}
+
+.centertext {
+  font-size: 19px;
+  line-height: 35px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.centerbutton {
+  width: 270px;
+  height: 57px;
+  margin-top: 46px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 16px;
+  border: 2px solid #17417d;
+  border-radius: 25px;
+  color: #17417d;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0px;
+  cursor: pointer;
+}
+
+.centerbutton.cbred {
+  border-width: 2px;
+  border-color: #bd1e2c;
+  background-color: #fff;
+  color: #bd1e2c;
+  font-weight: 400;
+}
+
+.centerbutton.cbred:hover {
+  border-width: 1px;
+  border-color: #fff;
+  background-color: #bd1e2c;
+  color: #fff;
+  font-weight: 400;
+}
+
+
+
+.slide2 {
+  overflow: auto;
+  width: 1000px;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 35px;
+  padding-bottom: 100px;
+}
+
+.slide2h2 {
+  color: #bd1e2c;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sl2item {
+  width: 240px;
+  margin-top: 61px;
+  margin-right: 28px;
+  margin-left: 28px;
+  float: left;
+}
+
+.sl2item.icon2 {
+  margin-left: 81px;
+}
+
+.sl2item.icon3 {
+  margin-right: 0px;
+  margin-left: 88px;
+}
+
+.sl2itemimg {
+  display: block;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.slitembutton {
+  width: 237px;
+  height: 57px;
+  margin-top: 43px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 16px;
+  border: 2px solid #bd1e2c;
+  border-radius: 30px;
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.slitembutton.icon2 {
+  border-color: #17417d;
+  color: #17417d;
+  font-weight: 400;
+  cursor: pointer;
+}
+.slitembutton.icon2:hover
+{
+ color:#fff;
+ background-color: #17417d;
+}
+
+
+
+.sl2bauttonspan {
+  color: #bd1e2c;
+  font-weight: 400;
+}
+
+.sl3 {
+  background-color: #f1f1f1;
+}
+
+.sl3center {
+  overflow: auto;
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 42px;
+  padding-bottom: 28px;
+  clear: left;
+}
+
+.sl3phonediv {
+  width: 300px;
+  padding-top: 1px;
+  float: left;
+}
+
+.sl3phone {
+  padding-top: 8px;
+  padding-left: 28px;
+  font-size: 27px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.sl3phonespan {
+  color: #17417d;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.feedbackbutton {
+  width: 217px;
+  height: 43px;
+  margin-top: 20px;
+  margin-left: 28px;
+  padding-top: 10px;
+  border: 2px solid #17417d;
+  border-radius: 30px;
+  color: #17417d;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.feedbackbutton:hover
+{
+  background-color: #17417d;
+  color:#fff;
+
+}
+
+.sl3infoblock {
+  width: 400px;
+  padding-top: 2px;
+  padding-left: 114px;
+  float: left;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sl3infolabel {
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.sl3infoitem {
+  margin-bottom: 13px;
+  color: #17417d;
+  font-size: 20px;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+.sl3prod {
+  overflow: visible;
+  width: 300px;
+  padding-left: 41px;
+  float: left;
+  clear: none;
+}
+
+.sl3ptitle {
+  margin-bottom: 14px;
+  padding-top: 2px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.footer {
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 20px;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.sitebody {
+  font-family: Roboto, sans-serif;
+}
+
+.top {
+  border-style: none none solid;
+  border-width: 1px;
+  border-color: #000 #000 #f1f1f1;
+}
+
+.chkdatabox {
+  overflow: auto;
+  width: 1000px;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 29px;
+  clear: none;
+}
+
+
+
+.divredline {
+  width: 621px;
+  height: 10px;
+  margin: -31px auto 28px;
+  border-top: 1px solid #bd1e2c;
+  background-color: transparent;
+}
+
+.chkleft {
+  width: 702px;
+  padding-left: 27px;
+  float: left;
+}
+
+.chkstrahitem {
+  margin-bottom: 0px;
+}
+
+.stitemnumber {
+  width: 25px;
+  height: 25px;
+  margin-left: 8px;
+  padding-top: 3px;
+  float: left;
+  border-radius: 30px;
+  background-color: #bd1e2c;
+  color: #fff;
+  text-align: center;
+}
+
+.chitemtext1 {
+  padding-top: 3px;
+  padding-left: 9px;
+  float: left;
+  color: #bd1e2c;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.stitemfio {
+  width: 300px;
+  padding-top: 3px;
+  padding-left: 15px;
+  float: left;
+  color: #4d6692;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.shitemdata {
+  padding-top: 3px;
+  padding-left: 10px;
+  float: left;
+  color: #4d6692;
+  font-size: 20px;
+}
+
+.chkh3 {
+  color: #bd1e2c;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.strahovatelinfoitem {
+  margin-bottom: 15px;
+  color: #bd1e2c;
+  font-size: 19px;
+  font-weight: 300;
+}
+
+.strhinfoitemspan {
+  color: #4d6692;
+  font-weight: 400;
+}
+
+.chkbox {
+  float: left;
+}
+
+.infos {
+  color: #bd1e2c;
+}
+
+.infostext {
+  padding-top: 5px;
+  padding-left: 25px;
+  float: left;
+  font-size: 18px;
+}
+
+.chkright {
+  width: 100%;
+  height: auto;
+  margin-right: 37px;
+  padding-right: 10px;
+  padding-left: 10px;
+  float: none;
+  border: 1px solid #17417d;
+  border-radius: 10px;
+  color: #17417d;
+}
+
+.chkrighttitle {
+  padding-top: 33px;
+  padding-bottom: 20px;
+  border-style: none none solid;
+  border-width: 1px;
+  border-color: #17417d;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.chkrightitem {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #9b9b9b;
+  font-size: 19px;
+  font-weight: 300;
+}
+
+.rightpricespan {
+  padding-top: 0px;
+  font-weight: 700;
+}
+
+.chkritog {
+  margin-top: 40px;
+  margin-bottom: 52px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  border-top: 1px solid #17417d;
+  border-bottom: 1px solid #17417d;
+  font-size: 19px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.chkritogsumma {
+  font-weight: 700;
+}
+
+.chkpaybutton {
+  width: 100%;
+  margin-top: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #bd1e2c !important;
+  background-color: #fff;
+  border-radius: 40px;
+  color: #bd1e2c;
+  font-size: 25px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.chrr1 {
+  width: 257px;
+  float: right;
+}
+
+.productcontainer {
+  overflow: auto;
+  width: 1000px;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 23px;
+  padding-bottom: 11px;
+  padding-left: 23px;
+  clear: none;
+}
+
+.prodpocket {
+  width: 210px;
+  height: 400px;
+  margin-right: 29px;
+  margin-left: 0px;
+  float: left;
+  border: 1px none #17417d;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  box-shadow: 4px 4px 6px 0 #c7c7c7;
+}
+
+.prodpocket.active {
+  border: 2px solid #17417d;
+}
+
+.prodplantitle {
+  padding-top: 29px;
+  padding-bottom: 22px;
+  color: #17417d;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.prdplanprice {
+  padding-top: 56px;
+  color: #17417d;
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.prodplanlist {
+  margin-top: 49px;
+  padding-left: 22px;
+}
+
+.plalistitem {
+  margin-bottom: 13px;
+  color: #17417d;
+}
+
+.listitemr {
+  width: 5px;
+  height: 5px;
+  margin-top: 7px;
+  margin-right: 8px;
+  float: left;
+  border-radius: 5px;
+  background-color: #bd1e2c;
+}
+
+.plisttext {
+  color: #17417d;
+}
+
+
+
+.prodstoimostitem {
+  text-transform: uppercase;
+  height: auto;
+  padding-top: 29px;
+  padding-bottom: 18px;
+  border-top: 1px solid #17417d;
+  color: #17417d;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.pordform {
+  overflow: auto;
+  width: 1000px;
+  height: auto;
+  margin-top: 45px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 41px;
+  padding-left: 23px;
+}
+
+
+
+.promoinputbloc {
+  overflow: auto;
+  height: auto;
+}
+
+.promolinw {
+  width: 705px;
+  height: 5px;
+  float: left;
+  border-top: 1px solid #e6e6e6;
+}
+
+.formstrstr {
+  width: 705px;
+}
+
+.formstrstr.p2 {
+  padding-top: 33px;
+}
+
+.strone {
+  width: 50px;
+  height: 50px;
+  padding-top: 14px;
+  float: left;
+  border: 2px solid #17417d;
+  border-radius: 30px;
+  color: #17417d;
+  font-size: 22px;
+  text-align: center;
+}
+
+.strtitle1 {
+  padding-top: 15px;
+  padding-left: 15px;
+  float: left;
+  color: #17417d;
+  font-size: 20px;
+}
+
+.strinputf1 {
+  overflow: auto;
+  padding-top: 35px;
+  padding-bottom: 10px;
+}
+
+.strinputf {
+  width: 163px;
+  height: 44px;
+  margin-right: 14px;
+  float: left;
+  border: 2px solid #17417d;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
+.straddbox {
+  margin-top: 0px;
+  padding-top: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.strbuttonadd {
+  width: 31px;
+  height: 31px;
+  margin-top: 8px;
+  padding-top: 3px;
+  padding-left: 4px;
+  float: left;
+  border: 1px solid #bd1e2c;
+  border-radius: 20px;
+  color: #bd1e2c;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.straddtextbutton {
+  padding-top: 13px;
+  padding-left: 8px;
+  float: left;
+  color: #bd1e2c;
+  font-size: 19px;
+  font-weight: 300;
+}
+
+.straddfamalybox {
+  width: 379px;
+  height: 64px;
+  margin-left: 42px;
+  padding-top: 7px;
+  float: left;
+  border-radius: 10px;
+  background-color: #eee;
+  color: #17417d;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.famlspan {
+  color: #bd1e2c;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.struserbox {
+  overflow: visible;
+  width: 310px;
+  height: auto;
+  margin-top: 34px;
+  clear: none;
+  border: 1px solid #17417d;
+  border-radius: 10px;
+}
+
+.sruserboxtop {
+  height: auto;
+  padding-top: 13px;
+  padding-bottom: 10px;
+  padding-left: 14px;
+  border-radius: 9px;
+  background-color: #17417d;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.srusertoptext {
+  text-transform: uppercase;
+  float: left;
+}
+
+.strusserdownarrow {
+  display: block;
+  margin-right: 10px;
+  float: right;
+  text-decoration: none;
+}
+
+.sruseritem {
+  margin-top: 16px;
+  padding-left: 18px;
+  clear: none;
+  color: #17417d;
+  font-size: 18px;
+  letter-spacing: 0px;
+}
+
+.struseradddiv {
+  display: inline-block;
+  overflow: visible;
+  width: 281px;
+  margin-top: 26px;
+  margin-bottom: 5px;
+  margin-left: 14px;
+  padding-left: 0px;
+  border-top: 1px solid #bd1e2c;
+}
+
+.regaddressform {
+  height: 300px;
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.regfromaddresinputbox {
+  overflow: auto;
+  width: 750px;
+  padding-top: 29px;
+}
+
+.regbuttonnf {
+  width: 180px;
+  height: 46px;
+  margin-top: 25px;
+  padding-top: 0px;
+  border: 2px solid #bd1e2c !important;
+  border-radius: 30px;
+  color: #bd1e2c;
+  font-size: 19px;
+  text-align: center;
+  background: #fff;
+}
+
+.modalcallback {
+  width: 400px;
+}
+
+.callbackinput {
+  border: 2px solid #17417d;
+  border-radius: 10px;
+}
+
+.callbackbutton {
+  margin-top: 12px;
+  border: 2px solid #17417d;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #17417d;
+  font-size: 19px;
+}
+
+.callbackbutton:hover
+{
+  background-color: #17417d;
+  color: #fff;
+}
+
+.callbacklabel {
+  padding-top: 6px;
+  color: #17417d;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.mainpagecenter {
+  overflow: auto;
+  width: 1000px;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 57px;
+}
+
+.mainh2 {
+  margin-top: 0px;
+  color: #c02734;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mainpageslider {
+  height: 400px;
+}
+
+.slider1 {
+  height: 100%;
+  background-color: #fff;
+}
+
+.mainsliderslide {
+  display: block;
+  height: 310px;
+  background-color: #fff;
+}
+
+.slidercircle {
+  display: inline-block;
+  width: 240px;
+  height: 300px;
+  margin-right: 45px;
+  margin-left: 45px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.sliderlink {
+  display: block;
+  padding-top: 29px;
+  color: #c02734;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.slidernav {
+  margin-top: 0px;
+  padding-top: 0px;
+  background-color: #fff;
+}
+
+@media (max-width: 991px) {
+  .topmenu {
+    overflow: visible;
+    width: 768px;
+    height: auto;
+    padding-bottom: 25px;
+  }
+  .logo2 {
+    margin-bottom: 25px;
+  }
+  .topcall {
+    margin-top: 7px;
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+    clear: both;
+  }
+  .centerbox {
+    background-position: 50% 50%;
+  }
+  .centerboxtext {
+    width: 768px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .slide2 {
+    width: 768px;
+  }
+  .sl2item {
+    margin-right: 10px;
+    margin-left: 15px;
+  }
+  .sl2item.icon2 {
+    margin-left: 0px;
+  }
+  .sl2item.icon3 {
+    margin-left: 0px;
+  }
+  .sl3center {
+    width: 768px;
+  }
+  .sl3infoblock {
+    width: 200px;
+    padding-left: 21px;
+  }
+  .sl3prod {
+    width: 250px;
+    padding-left: 29px;
+  }
+  .footer {
+    width: 768px;
+  }
+  .chkdatabox {
+    width: 768px;
+  }
+  .chkh1 {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .divredline {
+    margin-top: -18px;
+  }
+  .chkleft {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0px;
+    float: none;
+  }
+  .chrr1 {
+    margin-top: 34px;
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+  }
+  .productcontainer {
+    width: 768px;
+  }
+  .prodpocket {
+    margin-right: 15px;
+    margin-bottom: 37px;
+    margin-left: 15px;
+    clear: none;
+  }
+  .prodstoimostcontainer {
+    margin-top: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+  }
+  .pordform {
+    overflow: auto;
+    width: 768px;
+  }
+  .promoinput {
+    margin-top: 0px;
+  }
+  .promoinputbloc {
+    overflow: visible;
+  }
+  .formstrstr {
+    width: auto;
+    padding-top: 30px;
+  }
+  .regaddressform {
+    overflow: auto;
+    height: auto;
+    padding-bottom: 30px;
+  }
+  .regfromaddresinputbox {
+    width: auto;
+  }
+  .mainpagecenter {
+    width: 768px;
+  }
+  .slidercircle {
+    width: 190px;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+  .sliderlink {
+    font-size: 22px;
+  }
+  .sliderlink.tlines {
+    padding-top: 11px;
+  }
+}
+
+@media (max-width: 767px) {
+  .topmenu {
+    width: 480px;
+  }
+  .topphonediv {
+    display: block;
+    margin-top: 9px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 116px;
+    padding-left: 0px;
+    float: none;
+  }
+  .topcall {
+    margin-top: 20px;
+  }
+  .centerboxtext {
+    width: 480px;
+  }
+  .slide2 {
+    width: 480px;
+  }
+  .sl2item {
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+  }
+  .sl2item.icon2 {
+    margin-top: 98px;
+    margin-left: auto;
+  }
+  .sl2item.icon3 {
+    margin-top: 98px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .sl3center {
+    width: 480px;
+  }
+  .sl3phonediv {
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 31px;
+    float: none;
+    text-align: center;
+  }
+  .feedbackbutton {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .footer {
+    width: 480px;
+  }
+  .chkdatabox {
+    width: 480px;
+  }
+  .chkh1 {
+    display: block;
+    margin-left: auto;
+  }
+  .divredline {
+    width: 400px;
+    margin-top: -17px;
+  }
+  .chkleft {
+    width: 100%;
+  }
+  .chkstrahitem {
+    width: 100%;
+  }
+  .strahovatelinfoblock {
+    padding-left: 48px;
+  }
+  .commitchkblock {
+    padding-left: 50px;
+  }
+  .chkbox {
+    display: block;
+    float: left;
+  }
+  .infostext {
+    display: block;
+    padding-top: 0px;
+    padding-left: 49px;
+    float: none;
+    clear: none;
+  }
+  .productcontainer {
+    width: 480px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .prodpocket {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .prodpocket.active {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .prodstoimostcontainer {
+    margin-right: 5px;
+    margin-left: 5px;
+    float: left;
+  }
+  .pordform {
+    overflow: visible;
+    width: auto;
+    clear: none;
+  }
+  .promoinput {
+    margin-top: 0px;
+    float: none;
+  }
+  .promoinputbloc {
+    display: block;
+    overflow: visible;
+    height: auto;
+    padding-top: 0px;
+  }
+  .formstrstr {
+    overflow: auto;
+    width: 100%;
+  }
+  .regaddressform {
+    overflow: auto;
+  }
+  .regfromaddresinputbox {
+    overflow: visible;
+    width: auto;
+    clear: none;
+  }
+  .regbuttonnf {
+    clear: left;
+  }
+  .mainpagecenter {
+    width: 480px;
+  }
+  .mainslidersmall {
+    background-color: #fff;
+    text-align: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .topmenu {
+    width: 240px;
+  }
+  .logoimg1 {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+  }
+  .logo2box {
+    width: 100%;
+    float: none;
+  }
+  .logo2 {
+    width: 100%;
+    float: none;
+  }
+  .topphonediv {
+    width: 100%;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  .centerboxtext {
+    width: 100%;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .centerbutton {
+    width: 230px;
+  }
+  .slide2 {
+    width: 100%;
+  }
+  .sl3center {
+    width: 240px;
+  }
+  .sl3phonediv {
+    width: 100%;
+  }
+  .sl3phone {
+    padding-left: 0px;
+    text-align: center;
+  }
+  .sl3infoblock {
+    width: 100%;
+    padding-bottom: 16px;
+    padding-left: 20px;
+    float: none;
+  }
+  .sl3prod {
+    width: 100%;
+    margin-top: 7px;
+    padding-left: 20px;
+    float: none;
+  }
+  .footer {
+    width: 100%;
+  }
+  .chkdatabox {
+    width: 100%;
+  }
+  .chkh1 {
+    width: auto;
+  }
+  .divredline {
+    width: 100%;
+    margin-top: 36px;
+  }
+  .chkstrahitem {
+    margin-bottom: 10px;
+  }
+  .stitemfio {
+    width: auto;
+  }
+  .strahovatelinfoblock {
+    padding-left: 20px;
+  }
+  .chkright {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .chrr1 {
+    width: 100%;
+  }
+  .productcontainer {
+    width: 100%;
+  }
+  .prodpocket {
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+  }
+  .prodpocket.active {
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+  }
+  .prodstoimostcontainer {
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+  }
+  .pordform {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .promoinput {
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+  }
+  .promolinw {
+    width: 100%;
+  }
+  .formstrstr {
+    overflow: visible;
+  }
+  .formstrstr.p2 {
+    width: 100%;
+  }
+  .strone {
+    margin-top: 0px;
+  }
+  .strone.s2 {
+    margin-top: 6px;
+  }
+  .strtitle1 {
+    display: block;
+    width: auto;
+    padding-top: 0px;
+    padding-left: 56px;
+    float: none;
+  }
+  .strtitle1.s1 {
+    padding-top: 13px;
+  }
+  .strinputf1 {
+    text-align: left;
+  }
+  .strinputf {
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+  }
+  .straddbox {
+    overflow: visible;
+  }
+  .straddtextbutton {
+    display: block;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 44px;
+    float: none;
+  }
+  .straddtextbutton.s1 {
+    padding-top: 2px;
+  }
+  .straddtextbutton.s44 {
+    padding-top: 2px;
+  }
+  .straddfamalybox {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    padding-top: 8px;
+    padding-bottom: 11px;
+    float: right;
+  }
+  .struserbox {
+    width: 100%;
+  }
+  .srusertoptext {
+    width: 150px;
+  }
+  .strusserdownarrow {
+    margin-top: 8px;
+  }
+  .struseradddiv {
+    width: 100%;
+    margin-left: 0px;
+    padding-top: 8px;
+    padding-left: 9px;
+  }
+  .regbuttonnf {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .modalcallback {
+    width: auto;
+  }
+  .mainpagecenter {
+    width: auto;
+  }
+  .mainh2 {
+    font-size: 26px;
+  }
+}
