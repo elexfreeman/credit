@@ -61,6 +61,20 @@ class John
         return $res;
     }
 
+    function GetCardPrice($card)
+    {
+        $Product = GetPageInfo($this->ProductPage);
+        $pocket = $card['pocket'];
+
+        $price=$Product->TV['price_'.$pocket];
+        $summa=0;
+        for ($i = 1; $i <= ($card['ins_count'] + 0); $i++) {
+            if (isset($cart['ins_FIO_' . $i])) {
+                $summa+=$price;
+            }
+        }
+    }
+
     function tplInsureInput()
     {
         include 'tpl/tplInsureInput.php';
