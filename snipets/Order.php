@@ -8,5 +8,10 @@
  */
 class Order extends John
 {
+    function __construct()
+    {
+
+    }
+
 
 }

@@ -59,7 +59,7 @@
                 echo $this->tplCard( $_SESSION['cart']);
             ?>
         </div>
-        <input onclick="John.OrderPay();" type="button" id="payButton" data-loading-text="Подождите..."  class="chkpaybutton" value="Оплатить" />
+        <input onclick="Order.OrderPay();" type="button" id="payButton" data-loading-text="Подождите..."  class="chkpaybutton" value="Оплатить" />
     </div>
     <?php } else {?>
     Корзина пустая
