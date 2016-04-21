@@ -5,9 +5,110 @@
  * Date: 29.09.15
  * Time: 6:40
  */
+require_once "Security.php";
+
+
+/*Безопасная вставка вместо mysql_escape_String*/
+/*Взято из CodeIgniter*/
+function EscapeString($s)
+{
+    $sec = New CI_Security();
+
+    return $sec->xss_clean($s);
+    ///return $s;
+}
 
 $shipKey='ad441cf7449bc9af3977e6b0c2a6806e3655247c';
+/*Очищает $_GET*/
+function ClearGet()
+{
+    foreach ($_GET as $key=>$val)
+    {
+        $_GET[$key]=EscapeString($_GET[$key]);
+    }
+}
 
+
+function tmbImg($tv,$options='&h=300&w=300&zc=1')
+{
+    global $modx;
+    $properties = Array();
+    $properties['input'] = $tv;
+    $properties['options'] = $options;
+    return $modx->runSnippet('phpthumbsup', $properties);
+}
+
+
+function elex_send_email($to,$Subject,$Body)
+{
+    require_once 'mailer/PHPMailerAutoload.php';
+
+    $mail = new PHPMailer;
+
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->CharSet = "UTF-8";
+    $mail->Host = 'smtp.yandex.ru';  // Specify main and backup server
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'zakaz@berg-tour.ru';                            // SMTP username
+    $mail->Password = 'niceberg';                           // SMTP password
+    $mail->SMTPSecure = 'tls';
+    // Enable encryption, 'ssl' also accepted
+
+    $mail->SMTP_PORT = 465;
+
+    $mail->From = 'zakaz@berg-tour.ru';
+    $mail->FromName = 'Круиз';
+#$mail->addAddress('josh@example.net', 'Josh Adams');  // Add a recipient
+    $mail->addAddress($to);               // Name is optional
+#$mail->addReplyTo('info@example.com', 'Information');
+    //  $mail->addCC('elex@medlan.samara.ru');
+    //   $mail->addBCC('elex@medlan.samara.ru');
+
+    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+#$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+#$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+    $mail->isHTML(true);                                  // Set email format to HTML
+
+    $mail->Subject = $Subject;
+    $mail->Body    = $Body;
+    //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $res['error']=0;
+    if(!$mail->send()) {
+        $res['error']=1;
+        $res['error_msg']=$mail->ErrorInfo;
+
+    }
+
+    return $res;
+}
+
+function get_web_page( $url )
+{
+    $uagent = "Opera/9.80 (Windows NT 6.1; WOW64) Presto/2.12.388 Version/12.14";
+
+    $ch = curl_init( $url );
+
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);   // возвращает веб-страницу
+    curl_setopt($ch, CURLOPT_HEADER, 0);           // не возвращает заголовки
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);   // переходит по редиректам
+    curl_setopt($ch, CURLOPT_ENCODING, "");        // обрабатывает все кодировки
+    curl_setopt($ch, CURLOPT_USERAGENT, $uagent);  // useragent
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 120); // таймаут соединения
+    curl_setopt($ch, CURLOPT_TIMEOUT, 120);        // таймаут ответа
+    curl_setopt($ch, CURLOPT_MAXREDIRS, 10);       // останавливаться после 10-ого редиректа
+
+    $content = curl_exec( $ch );
+    $err     = curl_errno( $ch );
+    $errmsg  = curl_error( $ch );
+    $header  = curl_getinfo( $ch );
+    curl_close( $ch );
+
+    $header['errno']   = $err;
+    $header['errmsg']  = $errmsg;
+    $header['content'] = $content;
+    return $header;
+}
 
 //генератор паролей
 function PassGen($max=10)
@@ -78,10 +179,13 @@ function GetPageInfo($page_id)
 {
     global $modx;
     global $table_prefix;
+    $product = new stdClass();
+    $product->id = 0;
+    $sql = "select * from " . $table_prefix . "site_content
 
-    $sql = "select * from " . $table_prefix . "site_content where id=" . $page_id;
+    where (id=" . $page_id.")and(deleted=0)";
     foreach ($modx->query($sql) as $row) {
-        $product = new stdClass();
+
         $product->id = $row['id'];
         $product->introtext = $row['introtext'];
         $product->description = $row['description'];
@@ -94,9 +198,23 @@ function GetPageInfo($page_id)
         // - 1 - если это подарки, то тут нету дополнительных цен
         $tv = GetContentTV($page_id);
         $product->TV = $tv;
+        $product->TV_Full =GetContentTVFull($page_id);
+
 
     }
     return $product;
+}
+
+/*Пометить на удаление страницу*/
+function PageDelete($page_id)
+{
+    global $modx;
+    global $table_prefix;
+    $sql="update  " . $table_prefix . "site_content
+set deleted=1
+where id=".$page_id;
+    echo $sql;
+    $modx->query($sql);
 }
 
 //Инфо по продукту
@@ -123,6 +241,47 @@ function GetContentTV($content_id)
     return $tv;
 }
 
+
+function GetContentTVFull($content_id)
+{
+    global $modx;
+    global $table_prefix;
+    $sql_tv = "select
+                              tv.name,
+                           tv.caption,
+                           tv.`type` m_type,
+                           cv.value,
+                           category.category,
+                           tvt.rank
+
+                            from " . $table_prefix . "site_tmplvar_contentvalues cv
+
+                            join " . $table_prefix . "site_tmplvars tv
+                            on tv.id=cv.tmplvarid
+
+                            join " . $table_prefix . "categories category
+                            on tv.category=category.id
+
+                             join modx_site_tmplvar_templates tvt
+                            on tvt.tmplvarid=tv.id
+
+
+                            where cv.contentid=" . $content_id . " order by category.category ,tvt.rank ";
+
+    // echo $sql_tv;
+    $tv=array();
+    foreach ($modx->query($sql_tv) as $row_tv) {
+        $obj = new stdClass();
+        $obj->name=$row_tv['name'];
+        $obj->caption=$row_tv['caption'];
+        $obj->type=$row_tv['m_type'];
+        $obj->value=$row_tv['value'];
+        $obj->category=$row_tv['category'];
+        $tv[$row_tv['name']]=$obj;
+
+    }
+    return $tv;
+}
 
 function GetTV_Id_ByName($TV_name)
 {
@@ -161,13 +320,14 @@ function IncertPageTV($page_id,$tv_name,$tv_value)
 
     if ($c_tv_id == 0) {
         $sql_modx_vars = "INSERT INTO " . $table_prefix . "site_tmplvar_contentvalues
-(tmplvarid,contentid,value) VALUES ('" . $tv_id . "','".$page_id."','".mysql_escape_string($tv_value)."');";
+(tmplvarid,contentid,value) VALUES ('" . $tv_id . "','".$page_id."','".EscapeString($tv_value)."');";
      //   echo $sql_modx_vars . "<br>";
         $modx->query($sql_modx_vars);
     } else {
         $sql_modx_vars = "update " . $table_prefix . "site_tmplvar_contentvalues
-            set value='".mysql_escape_string($tv_value)."' where  (tmplvarid='" . $tv_id . "')and(contentid='".$page_id."')";
-        echo $sql_modx_vars . "<br>";
+            set value='".EscapeString($tv_value)."' where  (tmplvarid='" . $tv_id . "')and(contentid='".$page_id."')";
+
+       //echo $sql_modx_vars;
         $modx->query($sql_modx_vars);
     }
 }
@@ -197,7 +357,7 @@ function IncertPage($page)
 
     //Ищем такую страницу
     $product_id = 0;
-    $sql_page = "select * from " . $table_prefix . "site_content where pagetitle='" . mysql_escape_string($page->pagetitle) . "'";
+    $sql_page = "select * from " . $table_prefix . "site_content where pagetitle='" . EscapeString($page->pagetitle) . "'";
    // echo $sql_page;
     foreach ($modx->query($sql_page) as $row_page) {
         $product_id = $row_page['id'];
@@ -218,7 +378,7 @@ menutitle, donthit, privateweb, privatemgr,
 content_dispo, hidemenu, class_key, context_key,
 content_type, uri, uri_override, hide_children_in_tree,
 show_in_tree, properties)
-VALUES (NULL, 'document', 'text/html', '" .  mysql_escape_string($page->pagetitle) . "', '', '', '" . $page->alias . "',
+VALUES (NULL, 'document', 'text/html', '" .  EscapeString($page->pagetitle) . "', '', '', '" . $page->alias . "',
 '', true, 0, 0, " . $page->parent . ", false, '', '', true, " . $page->template . ", 1, true, true, 1, 1421901846, 0, 0, false, 0, 0, 1421901846, 1, '',
 false, false, false, false, false, 'modDocument', 'web', 1,
  '" . $page->url . "', false, false, true, null
@@ -228,17 +388,17 @@ false, false, false, false, false, 'modDocument', 'web', 1,
 
         $modx->query($sql_product);
         $product_id = $modx->lastInsertId();
-        echo "INCERT ".$product_id."\r\n"."<br>";
+        if($page->echo) echo "INCERT ".$product_id."\r\n"."<br>";
     }
     else
     {
-        echo "UPDAte PAge".$product_id."\r\n"."<br>";
+        if($page->echo) echo "UPDAte PAge".$product_id."\r\n"."<br>";
     }
     foreach($page->TV as $TV_name=>$TV_value)
     {
         IncertPageTV($product_id,$TV_name,$TV_value);
     }
-    print_r($page);
+    if($page->echo) print_r($page);
 
     return $product_id;
 }
@@ -284,46 +444,8 @@ function GetChildListNoSort($obj_id,$template)
 }
 
 
-function elex_send_email($to,$FromName,$Subject,$Body)
+/*удаляет из номера телефона лишние символы*/
+function regexPhone($phone)
 {
-    require_once 'mailer/PHPMailerAutoload.php';
-
-    $mail = new PHPMailer;
-
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->CharSet = "UTF-8";
-    $mail->Host = 'smtp.mail.ru';  // Specify main and backup server
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'follen-des';                            // SMTP username
-    $mail->Password = 'voland777';                           // SMTP password
-    $mail->SMTPSecure = 'tls';
-    // Enable encryption, 'ssl' also accepted
-
-    $mail->SMTP_PORT = 465;
-
-    $mail->From = 'follen-des@mail.ru';
-    $mail->FromName = $FromName;
-#$mail->addAddress('josh@example.net', 'Josh Adams');  // Add a recipient
-    $mail->addAddress($to);               // Name is optional
-#$mail->addReplyTo('info@example.com', 'Information');
-  //  $mail->addCC('elex@medlan.samara.ru');
- //   $mail->addBCC('elex@medlan.samara.ru');
-
-    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
-#$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-#$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-    $mail->isHTML(true);                                  // Set email format to HTML
-
-    $mail->Subject = $Subject;
-    $mail->Body    = $Body;
-    //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-    $res['error']=0;
-    if(!$mail->send()) {
-        $res['error']=1;
-        $res['error_msg']=$mail->ErrorInfo;
-
-    }
-
-    return $res;
+    return preg_replace('/[^0-9]/', '', $phone);
 }
