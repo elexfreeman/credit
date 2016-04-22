@@ -6,6 +6,7 @@
  * Date: 21.04.2016
  * Time: 19:42
  */
+require_once "John.php";
 class Order extends John
 {
     public $template = 10;
