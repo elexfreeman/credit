@@ -17,15 +17,15 @@ Order.OrderPay = function ()
     else
     {
         $.get(
-            "ajax.html",
+            "ajax-order.html",
             {
                 //log1:1,
-                action: "OrderPay"
+                action: "Commit"
             },
             function (data) {
                 if(data.error==0)
                 {
-                    window.location.href = "/thx.html";
+                    //window.location.href = "/thx.html";
                 }
                 else
                 {

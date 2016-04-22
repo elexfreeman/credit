@@ -51,7 +51,7 @@ class Order extends John
         $obj->TV['reg_email']=$_SESSION['cart']['reg_email'];
 
         $obj->alias = encodestring($obj->pagetitle);
-        $obj->url="orders/" .$obj->alias . ".html";
+        $obj->url="order/" .$obj->alias . ".html";
         $obj->id=IncertPage($obj);
 
     }
