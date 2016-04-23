@@ -80,11 +80,19 @@ class John
         include 'tpl/tplInsureInput.php';
     }
 
+    function validate()
+    {
+        return true;
+    }
+
     function NextStep()
     {
        // print_r($_GET);
+        ClearGet();
         $_SESSION['cart']=$_GET;
-        header("Location: /cart.html"); /* Перенаправление броузера */
+        /*Теперь проверяем валидность введенных данных*/
+        if ($this->validate()) header("Location: /cart.html"); /* Перенаправление броузера */
+        else header("Refresh:0");
     }
 
     /*Страница корзны*/

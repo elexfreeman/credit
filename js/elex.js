@@ -9,7 +9,7 @@ $(function () {
     $('[data-toggle="popover"]').popover()
 
     $(".phone").mask("+7(999) 999-99-99");
-    $(".date_picker").mask("99.99.9999");
+    //$(".date_picker").mask("99.99.9999");
 
     $.datepicker.setDefaults($.extend(
             $.datepicker.regional["ru"])

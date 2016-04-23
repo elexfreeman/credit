@@ -8,6 +8,7 @@
     <div class="chkleft">
         <div class="chkstrahlist">
         <?php
+        $k=1;
        for($i=1;$i<=($_SESSION['cart']['ins_count']+0);$i++)
        {
            if(isset($_SESSION['cart']['ins_FIO_'.$i]))
@@ -15,7 +16,7 @@
                ?>
 
             <div class="w-clearfix chkstrahitem">
-                <div class="stitemnumber">1</div>
+                <div class="stitemnumber"><?php echo $k;$k++; ?></div>
                 <div class="chitemtext1">Застрахованный:</div>
                 <div class="stitemfio"><?php echo $_SESSION['cart']['ins_FIO_'.$i]." ".$_SESSION['cart']['ins_name_'.$i]." ".$_SESSION['cart']['ins_lastname_'.$i];?></div>
                 <div class="shitemdata"><?php echo $_SESSION['cart']['ins_birthday_'.$i];?></div>

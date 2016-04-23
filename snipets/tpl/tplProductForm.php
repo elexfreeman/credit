@@ -117,7 +117,7 @@
                     <div class="strtitle1 s1">Застрахованный</div>
                 </div>
 
-                <div class="insurBox" count="1">
+                <div class="insurBox" count="<?php if (isset($_SESSION['cart']['ins_count'])) echo $_SESSION['cart']['ins_count']; else echo 1; ?>">
 
                     <?php
                     /*todo роверка на кол-во insur*/
@@ -159,14 +159,14 @@
 
                                     <input onchange="John.ChangeInput();"
                                            type="text"
-                                           ng-model="ins_birthday_<?php echo $i; ?>"
-                                           ng-minlength="5"
-                                           ng-maxlength="20"
+
                                            required
                                            placeholder="ДАТА РОЖДЕНИЯ..."
                                            name="ins_birthday_<?php echo $i; ?>"
+                                           id="ins_birthday_<?php echo $i; ?>"
                                            value="<?php if (isset($_SESSION['cart']['ins_birthday_' . $i])) echo $_SESSION['cart']['ins_birthday_' . $i]; ?>"
                                            class="w-input strinputf date_picker">
+
                                 </div>
                                 <?php
                             }
@@ -216,8 +216,10 @@
                                    required
                                    placeholder="ДАТА РОЖДЕНИЯ..."
                                    name="ins_birthday_1"
+                                   id="ins_birthday_1"
                                    value=""
                                    class="w-input strinputf date_picker">
+
                         </div>
                         <?php
                     }
@@ -246,7 +248,11 @@
                 </div>
                 <div class="struserbox" ng-model="u_lastname">
                     <div class="w-clearfix sruserboxtop">
-                        <div class="srusertoptext"></div>
+                        <div class="srusertoptext"><?php if(isset($_SESSION['cart']['u_lastname']))
+                            {
+                                echo $_SESSION['cart']['u_lastname']." ".$_SESSION['cart']['u_name']." ".$_SESSION['cart']['u_surname'];
+                            }
+                            ?></div>
                         <span onclick='John.ShowList()' class="strusserdownarrow click">▼</span>
                     </div>
                     <div id="tplInsurer" class="strAddHidden"><?php echo $this->tplInsurer(); ?></div>
@@ -340,6 +346,7 @@
                                ng-minlength="1"
                                ng-maxlength="20"
                                required
+                               value="<?php if (isset($_SESSION['cart']['reg_house'])) echo $_SESSION['cart']['reg_kv']; ?>"
                                placeholder="Квартира..." name="reg_kv"
                                class="w-input strinputf">
 
@@ -367,9 +374,9 @@
                                class="w-input strinputf">
                     </div>
                     <!--- <div class="regbuttonnf click" onclick="John.NextStep();">Далее</div> -->
-                     <input data-loading-text="Подождите..."
+                     <input data-loading-text="Подождите..." onclick="John.NextStep();"
                            id="NextStep"  ng-click="save(answer, productForm)"
-                           type="submit" class="regbuttonnf click" value="Далее"/>
+                           type="button" class="regbuttonnf click" value="Далее"/>
 
                 </div>
 
@@ -378,9 +385,13 @@
         </div>
     </form>
 </div>
-
-
+<?php print_r($_SESSION['cart']); ?>
+<!--
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/controllers/productFormController.js"></script>
 
+-->
+<script>
+    John.ShowCart();
+</script>
